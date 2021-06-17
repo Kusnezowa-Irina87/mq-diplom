@@ -106,18 +106,162 @@ input, select, textarea, button {
     z-index: 2;
 }
 
+/* .popup-hidden {
+    display: none;
+} */
+
+.popup-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: rgba(15, 13, 14, 0.6);
+}
+
+.popup-container {
+    max-width: 330px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 11;
+    background-color: #ffffff;
+    padding: 50px 30px 50px 30px;
+}
+
+div.popup > h2.popup-title {
+    margin-bottom: 40px;
+}
+
+.popup-item {
+    margin-bottom: 20px;
+}
+
+.popup-dsc {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.popup-dsc-font {
+    font-size: 13px;
+    font-weight: normal;
+    color: #000000;
+}
+
+.search-field {
+    box-sizing: border-box;
+    width: 100%;
+    height: 48px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background-color: #f4f7f6;
+    padding-left: 19px;
+    padding-right: 19px;
+    font-size: 13px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.popup-select {
+    background-image: url(../svg/form-arrows.svg);
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 10px;
+}
+
+.popup-select:focus {
+    outline: 1px solid #b59f5b;
+}
+
+/* .popup-option {
+    width: 330px;
+    спросить по поводу изменения внешнего вида у выпадающего списка с помощью Css 
+} */
+
+.popup-radio-label {
+    margin-right: 16px;
+}
+
+.popup-radio {
+    display: none;
+}
+
+.popup-radio-desc {
+    vertical-align: middle;
+}
+
+.popup-radio-desc::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-image: url(../svg/form-empty-circle.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 18px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.popup-radio:checked + .popup-radio-desc::before {
+    background-image: url(../svg/form-circle.svg);
+}
+
+.popup-textarea {
+    width: 100%;
+    max-width: 330px;
+    min-width: 200px;
+    max-height: 600px;
+    min-height: 130px;
+    box-sizing: border-box;
+    padding: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background-color: #f4f7f6;
+    font-size: 13px;
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+.popup-textarea:focus {
+    outline: 1px solid #b59f5b;
+}
+
+.button-form-x {
+    position: fixed;
+    top: -26px;
+    right: 0;
+    width: 18px;
+    height: 18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+
+
 .trends {
     margin-bottom: 65px;
 }
 
-.trends-title {
+.section-title {
     display: flex;
     justify-content: center;
     margin-bottom: 45px;
     position: relative;
 }
 
-.trends-title::after {
+.section-title::after {
     content: "";
     display: block;
     width: 66px;
@@ -129,14 +273,14 @@ input, select, textarea, button {
     opacity: 0.4;
 }
 
-.trends-title-link {
+.section-title-link {
     font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
     color: #0f0d0e;
 }
 
-.trends-title-link:hover {
+.hover-color-gold:hover {
     color: #b59f5b;
 }
 
@@ -148,10 +292,14 @@ input, select, textarea, button {
 .trend-item {
     width: calc((100% - 4px*3)/4);
     margin-left: 4px;
+    padding: 20px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: #000000;
 }
 
@@ -171,32 +319,38 @@ input, select, textarea, button {
     z-index: 2;
 }
 
-.trend-img-wrapper {
-    height: 320px;
-    position: relative;
-    z-index: 1;
+.trend-img1 {
+    background-image: url(../images/trend1.jpg);
 }
 
-.trend-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.trend-img2 {
+    background-image: url(../images/trend2.jpg);
+}
+
+.trend-img3 {
+    background-image: url(../images/trend3.jpg);
+}
+
+.trend-img4 {
+    background-image: url(../images/trend4.jpg);
 }
 
 .trend-item-base {
-    max-width: 73%;
-    position: absolute;
+    max-width: 100%;
+    box-sizing: border-box;
+    position: relative;
     z-index: 3;
-    border: 3px solid #b59f5b;
-/*     opacity: 0.6; */
-    margin-bottom: 16px;
-    padding: 33px;
+    border: 3px solid rgba(181, 159, 91, 0.6);
+    padding: 35px;
 }
 
-.trend-dsc-link {
+.basis-dsc {
     font-weight: 700;
     font-size: 20px;
     text-transform: uppercase;
+}
+
+.fontcolor-white {
     color: #ffffff;
 }
 
@@ -371,22 +525,6 @@ input, select, textarea, button {
     width: calc(100% - 48px);
 }
 
-.search-field {
-    box-sizing: border-box;
-    width: 100%;
-    height: 48px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    outline: none;
-    background-color: #e2eced;
-    padding-left: 19px;
-    padding-right: 19px;
-    font-size: 13px;
-    font-weight: normal;
-    color: #000000;
-}
-
 .search-button {
     width: 48px;
     height: 48px;
@@ -395,6 +533,10 @@ input, select, textarea, button {
     border: none;
     outline: none;
     background-color: #b59f5b;
+}
+
+.search-button:hover {
+    cursor: pointer;
 }
 
 .loupe {
@@ -407,24 +549,9 @@ input, select, textarea, button {
 
 .subscribe-field {
     margin-bottom: 18px;
-    box-sizing: border-box;
-    width: 100%;
-    height: 48px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    border: none;
-    outline: none;
-    background-color: #e2eced;
-    padding-left: 19px;
-    padding-right: 19px;
-    font-size: 13px;
-    font-weight: normal;
-    color: #000000;
 }
 
-.subscribe-button {
-    width: 100%;
-    height: 48px;
+.basis-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     border: none;
@@ -435,6 +562,15 @@ input, select, textarea, button {
     text-transform: uppercase;
     color: #ffffff;
     text-align: center;
+}
+
+.basis-button:hover {
+    cursor: pointer;
+} 
+
+.subscribe-button-dimensions {
+    width: 100%;
+    height: 48px;
 }
 
 .tags-list {
@@ -475,10 +611,6 @@ input, select, textarea, button {
     color: #000000;
 }
 
-.categories-link:hover {
-    color: #b59f5b;
-}
-
 .articles-number {
     display: inline-block;
     vertical-align: top;
@@ -487,6 +619,117 @@ input, select, textarea, button {
     color: #b59f5b;
     text-align: center;
     margin-left: 5px;
+}
+
+.shop {
+    margin-bottom: 65px;
+}
+
+.container-shop {
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.shop-item {
+    max-width: 29%;
+    display: flex;
+    flex-direction: column;
+}
+
+.shop-picture {
+    padding: 0 24px;
+    height: 204px;
+}
+
+.shop-picture-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+.shop-content {
+    flex-grow: 1;
+    position: relative;
+    top: -30px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid rgba(181, 159, 91, 0.6);
+    padding: 37px 21px 24px 21px;
+}
+
+.shop-dsc {
+    margin-bottom: 10px;
+}
+
+.fontcolor-black2 {
+    color: #0f0d0e;
+}
+
+.shop-excerpt-wrap {
+    margin-bottom: 24px;
+}
+
+.hover-inderline-gold:hover {
+    color: #b59f5b;
+    text-decoration: underline;
+}
+
+.fontcolor-gold {
+    color: #b59f5b;
+}
+
+.shop-prices-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+.old-price {
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: line-through;
+    color: #0f0d0e;
+}
+
+.rub-small { 
+	line-height: 5px;
+	width: 0.4em;
+	border-bottom: 1px solid #0f0d0e; 
+	display: inline-block;
+}
+
+.rub-big { 
+	line-height: 7px;
+	width: 0.4em;
+	border-bottom: 1px solid #0f0d0e; 
+	display: inline-block;
+}
+
+.shop-button-dimensions {
+    width: 140px;
+    height: 48px;
+    background-color: #b59f5b;
+    display: flex;
+}
+
+.shop-button-dimensions:hover {
+    cursor: pointer;
+}
+
+.shop-button-link {
+    margin: auto;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .footer {
