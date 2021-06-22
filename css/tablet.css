@@ -35,19 +35,18 @@ input, select, textarea, button {
 }
 
 .header {
-    background-image: url(../images/banner-bg.jpg);
+    background-image: url(../images/banner-bg-tablet.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-color: #000000;
-    padding-top: 28px;
-    padding-bottom: 145px;
+    padding-top: 40px;
+    padding-bottom: 120px;
     position: relative;
-    margin-bottom: 65px;
+    margin-bottom: 45px;
     padding-left: 35px;
     padding-right: 35px;
 }
-
 .header::after {
     content: "";
     position: absolute;
@@ -75,28 +74,41 @@ input, select, textarea, button {
     width: 179px;
 }
 
-.gamburger-hidden {
-    display: none;
-}
-  
-.menu-list {
+.gamburger-button {
+    width: 23px;
+    height: 19px;
     display: flex;
+    align-items: center;
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+    outline: none;
+    background: none;
 }
-  
-.menu-item {
-    margin-left: 35px;
+
+.gamburger,
+.gamburger::after,
+.gamburger::before {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff
 }
-  
-.menu-item:first-child {
-    margin-left: 0;
+
+.gamburger::after {
+    content: "";
+    top: 8px;
 }
-  
-.menu-item-link {
-    font-weight: 400;
-    font-size: 13px;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-align: center;
+
+.gamburger::before {
+    content: "";
+    bottom: 8px;
+}
+
+.nav_hidden {
+    display: none;
 }
 
 .header-title {
@@ -112,9 +124,9 @@ input, select, textarea, button {
     z-index: 2;
 }
 
-._hidden {
+/* ._hidden {
     display: none;
-}
+} */
 
 .popup-wrapper {
     position: fixed;
@@ -139,23 +151,17 @@ input, select, textarea, button {
     padding: 50px 30px 50px 30px;
 }
 
-/* @media (min-width: 1660px) {
-    .popup-container {
-        max-width: 330px;
-    }
-}
- */
 div.popup > h2.popup-title {
-    margin-bottom: 2.41vw; /* 40px от 1660*/
+    margin-bottom: 40px;
 }
 
 .popup-item {
-    margin-bottom: 1.2vw; /* 20px */
+    margin-bottom: 20px;
 }
 
 .popup-dsc {
     display: inline-block;
-    margin-bottom: 0.6vw; /* 10px */
+    margin-bottom: 10px;
 }
 
 .popup-dsc-font {
@@ -167,28 +173,29 @@ div.popup > h2.popup-title {
 .popup-select {
     box-sizing: border-box;
     width: 100%;
-    height: 48px; 
+    height: 48px;
     -webkit-appearance: none;
     -moz-appearance: none;
     border: none;
     outline: none;
     background-color: #f4f7f6;
-    padding-left: 19px; 
-    padding-right: 19px; 
+    padding-left: 19px;
+    padding-right: 19px;
     font-size: 13px;
     font-weight: normal;
     color: rgba(0, 0, 0, 0.54);
     background-image: url(../svg/form-arrows.svg);
     background-repeat: no-repeat;
-    background-position: right 14px center; 
-    background-size: 10px; 
+    background-position: right 14px center;
+    background-size: 10px;
 }
 
 .popup-select:focus {
     outline: 1px solid #b59f5b;
 }
 
-/* 
+/* .popup-option {
+    width: 330px;
     спросить по поводу изменения внешнего вида у выпадающего списка с помощью Css 
 } */
 
@@ -212,7 +219,7 @@ div.popup > h2.popup-title {
     background-image: url(../svg/form-empty-circle.svg);
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 18px; 
+    background-size: 18px;
     margin-right: 5px;
     vertical-align: middle;
 }
@@ -223,6 +230,8 @@ div.popup > h2.popup-title {
 
 .popup-textarea {
     width: 100%;
+    max-width: 330px;
+    min-width: 330px;
     max-height: 130px;
     min-height: 130px;
     box-sizing: border-box;
@@ -245,7 +254,7 @@ div.popup > h2.popup-title {
     position: fixed;
     top: -26px;
     right: 0;
-    width: 18px; 
+    width: 18px;
     height: 18px;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -289,13 +298,12 @@ div.popup > h2.popup-title {
 }
 
 .container-trends {
-    max-width: 100%;
+    max-width: 100vw;
     display: flex;
 }
 
 .trend-item {
-    width: calc((100% - 4px*3)/4);
-    margin-left: 4px;
+    box-sizing: border-box;
     padding: 20px;
     position: relative;
     display: flex;
@@ -307,8 +315,38 @@ div.popup > h2.popup-title {
     background-color: #000000;
 }
 
-.trend-item:nth-child(4n + 1) {
-    margin-left: 0;
+@media (orientation: landscape), (min-width: 1024px) {
+    .trend-item {
+        width: calc((100% - 4px*3)/4);
+        margin-left: 4px;
+    }
+
+    .trend-item:nth-child(4n + 1) {
+        margin-left: 0;
+    }
+}
+
+@media (orientation: portrait), (max-width: 1023px) {
+    .container-trends {
+        flex-wrap: wrap;
+    }
+
+    .trend-item {
+        width: calc(50% - 2px);
+    }
+
+    .trend-item:nth-child(even) {
+        margin-left: 2px;
+    }
+
+    .trend-item:nth-child(odd) {
+        margin-right: 2px;
+        margin-left: 0px;
+    }
+
+    .trend-item:nth-child(n + 3) {
+        margin-top: 3px;
+    }
 }
 
 .trend-item::after {
@@ -368,20 +406,25 @@ div.popup > h2.popup-title {
 }
 
 .main {
-    max-width: 65%;
+    max-width: 56.3%;
 }
 
 .post-list {
-    display: flex;
     margin-bottom: 60px;
 }
 
+.post-list-link {
+    display: inline-block;
+    width: 100%;
+}
+
 .container-post-img {
-    margin-right: 30px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .post-list-img {
-    max-width: 381px;
+    width: 100%;
     object-fit: cover;
     object-position: center center;
 }
@@ -415,7 +458,7 @@ div.popup > h2.popup-title {
 }
 
 .post-date-author {
-    margin-bottom: 46px;
+    margin-bottom: 35px;
 }
 
 .post-date {
@@ -442,8 +485,24 @@ div.popup > h2.popup-title {
     line-height: 1.466;
 }
 
+.post-list-preview {
+    position: relative;
+}
+
+.post-list-preview::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #eeeeee;
+}
+
 .aside {
-    width: 270px;
+    max-width: calc(43.7% - 35px);
+    margin-left: 35px;
 }
 
 .aside-section {
@@ -652,14 +711,23 @@ div.popup > h2.popup-title {
 .container-shop {
     max-width: 1200px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     margin: 0 auto;
 }
 
 .shop-item {
-    max-width: 29%;
+    width: calc(50% - 11px);
     display: flex;
     flex-direction: column;
+}
+
+.shop-item:nth-child(odd) {
+    margin-right: 11px;
+}
+
+.shop-item:nth-child(even) {
+    margin-left: 11px;
 }
 
 .shop-picture {
