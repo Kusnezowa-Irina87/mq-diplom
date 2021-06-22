@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MQ diplom Kusnezowa</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" media="(min-width:1201px)">
+    <link rel="stylesheet" href="css/tablet.css" media="(min-width:641px) and (max-width:1200px)">
+    <link rel="stylesheet" href="css/mobele.css" media="(max-width:640px)">
 </head>
 
 <body>
@@ -16,7 +18,13 @@
                 <img src="svg/noemi-logo.svg" class="logo-img" alt="логотип">
             </a>
             <nav class="menu">
-                <ul class="menu-list">
+                <form class="gamburger-form gamburger-hidden" action="" method="POST">
+                    <span class="request-desc">нажмите на кнопку, чтобы посмотреть меню сайта</span>
+                    <button class="gamburger-button" type="submit">
+                        <span class="gamburger"></span>
+                    </button>
+                </form>
+                <ul class="menu-list nav_hidden">
                     <li class="menu-item">
                         <a class="menu-item-link" href="#0">главная</a>
                     </li>
@@ -40,7 +48,7 @@
         </div>
         <h1 class="header-title">Блог о творчестве, спорте, и образе жизни</h1>
     </header>
-    <section class="popup-wrapper popup-hidden">
+    <section class="popup-wrapper _hidden">
         <div class="popup-container">
             <div class="popup">
                 <h2 class="section-title-link section-title popup-title">Ваш фидбэк</h2>
@@ -49,7 +57,7 @@
                 <div class="popup-item">
                     <label for="">
                         <span class="popup-dsc-font popup-dsc">Как часто вы заходите на сайт?</span>
-                        <select class="popup-select search-field" name="" id="">
+                        <select class="popup-select" name="" id="">
                             <option class="popup-option" value="Almost_every_day">Почти каждый день</option><span
                                 class="request-desc">Почти каждый день</span>
                             <option class="popup-option" value="Every_few_days">Раз в несколько дней</option><span
@@ -246,7 +254,7 @@
                         <time class="post-date">10 июня 2019</time>
                         <span class="post-author">Неизвестный автор</span>
                     </div>
-                    <div class="post-list-preview">
+                    <div class="post-list-preview1">
                         <p class="post-list-dsc">Лето на носу, а с ним и музыкальные фестивали. На каком же из них
                             вы
                             разобьёте свою палатку?</p>
@@ -458,7 +466,12 @@
             <li class="shop-item">
                 <div class="shop-picture">
                     <a class="shop-picture-link" href="#0">
-                        <img class="shop-picture-img" src="images/shop-item-desk1.jpg" alt="Подушки на диван">
+                        <picture>
+                            <source media="(max-width: 640px)" srcset="images/shop-item-mobile1.jpg">
+                            <source media="(max-width: 1200px)" srcset="images/shop-item-tablet1.jpg">
+                            <source media="(min-width: 1201px)" srcset="images/shop-item-desk1.jpg">
+                            <img class="shop-picture-img" src="images/shop-item-desk1.jpg" alt="Подушки на диван">
+                        </picture>
                     </a>
                 </div>
                 <div class="shop-content">
@@ -489,7 +502,12 @@
             <li class="shop-item">
                 <div class="shop-picture">
                     <a class="shop-picture-link" href="#0">
-                        <img class="shop-picture-img" src="images/shop-item-desk2.jpg" alt="Кукла «Зайчик»">
+                        <picture>
+                            <source media="(max-width: 640px)" srcset="images/shop-item-mobile2.jpg">
+                            <source media="(max-width: 1200px)" srcset="images/shop-item-tablet2.jpg">
+                            <source media="(min-width: 1201px)" srcset="images/shop-item-desk2.jpg">
+                            <img class="shop-picture-img" src="images/shop-item-desk2.jpg" alt="Кукла «Зайчик»">
+                        </picture>
                     </a>
                 </div>
                 <div class="shop-content">
@@ -520,7 +538,12 @@
             <li class="shop-item">
                 <div class="shop-picture">
                     <a class="shop-picture-link" href="#0">
-                        <img class="shop-picture-img" src="images/shop-item-desk3.jpg" alt="Шестиугольная рамка">
+                        <picture>
+                            <source media="(max-width: 640px)" srcset="images/shop-item-mobile3.jpg">
+                            <source media="(max-width: 1200px)" srcset="images/shop-item-tablet3.jpg">
+                            <source media="(min-width: 1201px)" srcset="images/shop-item-desk3.jpg">
+                            <img class="shop-picture-img" src="images/shop-item-desk3.jpg" alt="Шестиугольная рамка">
+                        </picture>
                     </a>
                 </div>
                 <div class="shop-content">
