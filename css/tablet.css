@@ -115,15 +115,16 @@ input, select, textarea, button {
     max-width: 690px;
     margin: 127px auto 0;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 40px;
     text-transform: uppercase;
     color: #ffffff;
     text-align: center;
-    line-height: 1.667;
+    line-height: 1.375;
     position: relative;
     z-index: 2;
 }
 
+/* скрыть popup */
 /* ._hidden {
     display: none;
 } */
@@ -136,7 +137,7 @@ input, select, textarea, button {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 999;
     background-color: rgba(15, 13, 14, 0.6);
 }
 
@@ -229,9 +230,7 @@ div.popup > h2.popup-title {
 }
 
 .popup-textarea {
-    width: 100%;
-    max-width: 330px;
-    min-width: 330px;
+    min-width: 100%;
     max-height: 130px;
     min-height: 130px;
     box-sizing: border-box;
@@ -264,13 +263,13 @@ div.popup > h2.popup-title {
 }
 
 .trends {
-    margin-bottom: 65px;
+    margin-bottom: 50px;
 }
 
 .section-title {
     display: flex;
     justify-content: center;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     position: relative;
 }
 
@@ -288,7 +287,7 @@ div.popup > h2.popup-title {
 
 .section-title-link {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 18px;
     text-transform: uppercase;
     color: #0f0d0e;
 }
@@ -303,12 +302,14 @@ div.popup > h2.popup-title {
 }
 
 .trend-item {
+    min-height: 245px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px 20px 15px 20px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    flex-grow: 1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -383,12 +384,12 @@ div.popup > h2.popup-title {
     position: relative;
     z-index: 3;
     border: 3px solid rgba(181, 159, 91, 0.6);
-    padding: 35px;
+    padding: 30px;
 }
 
 .basis-dsc {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 17px;
     text-transform: uppercase;
 }
 

@@ -36,15 +36,16 @@ input, select, textarea, button {
 
 .header {
     width: 100%;
+    box-sizing: border-box;
     background-image: url(../images/banner-mobile.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     background-color: #000000;
-    padding-top: 32px;
-    padding-bottom: 120px;
+    padding-top: 19px;
+    padding-bottom: 214px;
     position: relative;
-    margin-bottom: 45px;
+    margin-bottom: 40px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -61,15 +62,29 @@ input, select, textarea, button {
 }
   
 .lodo-nav {
-    display: block;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
     position: relative;
     z-index: 2;
+    margin-bottom: 40px;
+}
+
+.logo-link {
+    display: inline-block;
+    order: 2;
+    text-align: center;
+    margin-top: 175px;
 }
   
 .logo-img {
     max-width: 270px;
     margin: 0 auto;
+}
+
+.menu {
+    order: 1;
+    align-self: flex-end;
 }
 
 .gamburger-button {
@@ -83,6 +98,7 @@ input, select, textarea, button {
     border: none;
     outline: none;
     background: none;
+
 }
 
 .gamburger,
@@ -111,20 +127,28 @@ input, select, textarea, button {
 
 .header-title {
     max-width: 690px;
-    margin: 127px auto 0;
+    margin: 0 auto;
     font-weight: 700;
-    font-size: 45px;
+    font-size: 26px;
     text-transform: uppercase;
     color: #ffffff;
     text-align: center;
-    line-height: 1.667;
+    line-height: 1.384;
     position: relative;
     z-index: 2;
+    padding: 0 20px; /* коррекция ширины текста для лучшего отображения */
 }
 
-._hidden {
-    display: none;
+@media (orientation: portrait) and (max-width: 349px) { /* убираем лишние padding для лучшего отображения текста на маленьких экранах */
+    .header-title {
+        padding: 0;
+    }
 }
+
+/* скрыть popup */
+/* ._hidden {
+    display: none;
+} */
 
 .popup-wrapper {
     position: fixed;
@@ -134,19 +158,26 @@ input, select, textarea, button {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 999;
     background-color: rgba(15, 13, 14, 0.6);
 }
 
 .popup-container {
-    width: 330px;
+    width: 286px;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     z-index: 1000;
     background-color: #ffffff;
-    padding: 50px 30px 50px 30px;
+    padding: 30px 22px 30px 22px;
+}
+
+@media (max-width: 360px) {
+    .popup-container {
+        width: 79.5vw;
+        padding: 30px 6vw 30px 6vw;
+    }
 }
 
 div.popup > h2.popup-title {
@@ -192,11 +223,6 @@ div.popup > h2.popup-title {
     outline: 1px solid #b59f5b;
 }
 
-/* .popup-option {
-    width: 330px;
-    спросить по поводу изменения внешнего вида у выпадающего списка с помощью Css 
-} */
-
 .popup-radio-label {
     margin-right: 16px;
 }
@@ -227,9 +253,7 @@ div.popup > h2.popup-title {
 }
 
 .popup-textarea {
-    width: 100%;
-    max-width: 330px;
-    min-width: 330px;
+    min-width: 100%;
     max-height: 130px;
     min-height: 130px;
     box-sizing: border-box;
@@ -261,14 +285,60 @@ div.popup > h2.popup-title {
     background: none;
 }
 
+@media (orientation: landscape) {
+    .popup-container {
+        height: 100vmin;
+    }
+
+    div.popup > h2.popup-title {
+        margin-bottom: 11vmin;
+    }
+    
+    .popup-item {
+        margin-bottom: 5.5vmin;
+    }
+    
+    .popup-dsc {
+        margin-bottom: 2.7vmin;
+    }
+    
+    .popup-select {
+        height: 13.3vmin;
+        padding-left: 5.2vmin;
+        padding-right: 5.2vmin;
+        background-position: right 3.8vmin center;
+        background-size: 2.7vmin;
+    }
+    
+    .popup-radio-label {
+        margin-right: 4.44vmin;
+    }
+    
+    .popup-radio-desc::before {
+        content: "";
+        width: 5vmin;
+        height: 5vmin;
+        background-size: 5vmin;
+        margin-right: 1.38vmin;
+
+    }
+    
+    .popup-textarea {
+        max-height: 36.1vmin;
+        min-height: 36.1vmin;
+        box-sizing: border-box;
+        padding: 5vmin;
+    }
+}
+
 .trends {
-    margin-bottom: 65px;
+    margin-bottom: 45px;
 }
 
 .section-title {
     display: flex;
     justify-content: center;
-    margin-bottom: 45px;
+    margin-bottom: 35px;
     position: relative;
 }
 
@@ -286,22 +356,22 @@ div.popup > h2.popup-title {
 
 .section-title-link {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
     color: #0f0d0e;
 }
 
-.hover-color-gold:hover {
-    color: #b59f5b;
-}
-
 .container-trends {
     width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .trend-item {
+    min-height: 230px;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 15px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -314,8 +384,7 @@ div.popup > h2.popup-title {
 
 @media (orientation: landscape) {
     .container-trends {
-        display: flex;
-        flex-wrap: wrap;
+        flex-direction: row;
     }
 
     .trend-item {
@@ -329,6 +398,10 @@ div.popup > h2.popup-title {
     .trend-item:nth-child(odd) {
         margin-right: 2px;
         margin-left: 0px;
+    }
+    
+    .trend-item:nth-child(n + 3) {
+        margin-top: 3px;
     }
 }
 
@@ -376,12 +449,12 @@ div.popup > h2.popup-title {
     position: relative;
     z-index: 3;
     border: 3px solid rgba(181, 159, 91, 0.6);
-    padding: 35px;
+    padding: 25px 20px 25px 20px;
 }
 
 .basis-dsc {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     text-transform: uppercase;
 }
 
@@ -390,7 +463,7 @@ div.popup > h2.popup-title {
 }
 
 .container-main-aside {
-    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
@@ -432,10 +505,6 @@ div.popup > h2.popup-title {
     color: #b59f5b;
 }
 
-.category-link:hover {
-    text-decoration: underline;
-}
-
 .category-item {
     margin-left: 19px;
 }
@@ -471,7 +540,7 @@ div.popup > h2.popup-title {
 
 .post-list-dsc {
     font-weight: 400;
-    font-size: 15px;
+    font-size: 14px;
     color: #0f0d0e;
     line-height: 1.466;
 }
@@ -496,7 +565,7 @@ div.popup > h2.popup-title {
 }
 
 .aside-section {
-    margin-bottom: 60px;
+    margin-bottom: 45px;
 }
 
 .aside-title {
@@ -606,10 +675,6 @@ div.popup > h2.popup-title {
     background-color: #b59f5b;
 }
 
-.search-button:hover {
-    cursor: pointer;
-}
-
 .loupe {
     width: 18px;
 }
@@ -635,10 +700,6 @@ div.popup > h2.popup-title {
     text-align: center;
 }
 
-.basis-button:hover {
-    cursor: pointer;
-} 
-
 .subscribe-button-dimensions {
     width: 100%;
     height: 48px;
@@ -655,10 +716,6 @@ div.popup > h2.popup-title {
     margin-bottom: 6px;
     padding: 4px 13px;
     border: 3px solid #e2eced;
-}
-
-.item-tag:hover {
-    background-color: #e2eced;
 }
 
 .tags-link {
@@ -693,6 +750,7 @@ div.popup > h2.popup-title {
 }
 
 .shop {
+    max-width: 100%;
     margin-bottom: 65px;
     padding-left: 15px;
     padding-right: 15px;
@@ -700,9 +758,6 @@ div.popup > h2.popup-title {
 
 .container-shop {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
     margin: 0 auto;
 }
 
@@ -712,13 +767,24 @@ div.popup > h2.popup-title {
     flex-direction: column;
 }
 
+@media (orientation: landscape) {
+    .container-shop {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
-.shop-item:nth-child(odd) {
-    margin-right: 11px;
-}
+    .shop-item {
+        width: calc(50% - 11px);
+    }
 
-.shop-item:nth-child(even) {
-    margin-left: 11px;
+    .shop-item:nth-child(odd) {
+        margin-right: 11px;
+    }
+    
+    .shop-item:nth-child(even) {
+        margin-left: 11px;
+    }
 }
 
 .shop-picture {
@@ -754,11 +820,6 @@ div.popup > h2.popup-title {
 
 .shop-excerpt-wrap {
     margin-bottom: 24px;
-}
-
-.hover-inderline-gold:hover {
-    color: #b59f5b;
-    text-decoration: underline;
 }
 
 .fontcolor-gold {
@@ -798,10 +859,6 @@ div.popup > h2.popup-title {
     display: flex;
 }
 
-.shop-button-dimensions:hover {
-    cursor: pointer;
-}
-
 .shop-button-link {
     margin: auto;
     font-size: 14px;
@@ -817,6 +874,7 @@ div.popup > h2.popup-title {
 
 .footer {
     width: 100%;
+    box-sizing: border-box;
     margin: 0 auto;
     padding-bottom: 38px;
     padding-left: 15px;

@@ -112,9 +112,10 @@ input, select, textarea, button {
     z-index: 2;
 }
 
-._hidden {
-    display: none;
-}
+/* скрыть popup */
+/* ._hidden {
+    display: none;     
+} */
 
 .popup-wrapper {
     position: fixed;
@@ -124,7 +125,7 @@ input, select, textarea, button {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 10;
+    z-index: 999;
     background-color: rgba(15, 13, 14, 0.6);
 }
 
@@ -139,12 +140,6 @@ input, select, textarea, button {
     padding: 50px 30px 50px 30px;
 }
 
-/* @media (min-width: 1660px) {
-    .popup-container {
-        max-width: 330px;
-    }
-}
- */
 div.popup > h2.popup-title {
     margin-bottom: 2.41vw; /* 40px от 1660*/
 }
@@ -295,8 +290,9 @@ div.popup > h2.popup-title {
 
 .trend-item {
     width: calc((100% - 4px*3)/4);
+    min-height: 320px;
     margin-left: 4px;
-    padding: 20px;
+    padding: 15px 20px 15px 20px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -345,7 +341,7 @@ div.popup > h2.popup-title {
     position: relative;
     z-index: 3;
     border: 3px solid rgba(181, 159, 91, 0.6);
-    padding: 35px;
+    padding: 30px;
 }
 
 .basis-dsc {
